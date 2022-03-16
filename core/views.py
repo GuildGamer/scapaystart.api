@@ -31,6 +31,7 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
         serializer = SubscriptionModelSerializer(data=request.data)
 
         if not serializer.is_valid():
+            print(serializer.errors)
             return Response(
                 {
                     "success": False,
