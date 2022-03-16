@@ -13,7 +13,6 @@ API_VERSION = "v1"
 SCOPES = ["https://mail.google.com/"]
 
 port = 465  # For SSL
-password = config("EMAIL_PASS")
 
 # Create a secure SSL context
 context = ssl.create_default_context()
