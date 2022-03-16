@@ -58,9 +58,9 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
 ]
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST = ("http://localhost:3000", "https://scapay.netlify.app")
+# CORS_ORIGIN_WHITELIST = ("http://localhost:3000", "https://scapay.netlify.app")
 
 ROOT_URLCONF = "scapaystart.urls"
 
