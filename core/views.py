@@ -43,12 +43,13 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_200_OK,
             )
         with transaction.atomic():
-            subscription = serializer.save()
-            is_valid = validate_email(subscription.email, verify=True)
+            email = serializer.data.get("email")
+            name = serializer.data.get("name")
+            is_valid = validate_email(email, verify=True)
             if is_valid == True:
-                print(f"VALID EMAIL {subscription.email}")
+                print(f"VALID EMAIL {email}")
                 try:
-                    sm.send_email(name=subscription.name, recepient=subscription.email)
+                    sm.send_email(name=name, recepient=email)
                 except Exception as e:
                     return Response(
                         {
@@ -60,7 +61,7 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
                         status=status.HTTP_200_OK,
                     )
             else:
-                print(f"INVALID EMAIL {subscription.email}")
+                print(f"INVALID EMAIL {email}")
                 return Response(
                     {
                         "success": False,
@@ -71,6 +72,7 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
                     status=status.HTTP_200_OK,
                 )
 
+        subscription = serializer.save()
         return Response(
             {"success": True, "error": False, "msg": None, "data": serializer.data},
             status=status.HTTP_201_CREATED,
