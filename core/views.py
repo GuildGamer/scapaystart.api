@@ -39,7 +39,7 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
                     "msg": serializer.errors,
                     "data": None,
                 },
-                status=status.HTTP_400_BAD_REQUEST,
+                status=status.HTTP_200_OK,
             )
         with transaction.atomic():
             subscription = serializer.save()
