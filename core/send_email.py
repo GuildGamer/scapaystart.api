@@ -33,15 +33,15 @@ def send_email(recepient, name) -> None:
     html = f"""\
     <html>
     <body style="margin: auto; text-align: center; background-color: #FFFFFF; transition: 0.3s; padding: 5px 10px; color: #2d3092;">
-        <p style="color: #2d3092;"> Hi {name},</p>
-        <p style="color: #2d3092;"> Welcome to Scapay. We will be sending updates and news about Scapay to you. We hope you're as excited as we are for the journey ahead.</p>
+        <p style="color: #2d3092; background-color: #FFFFFF;"> Hi {name},</p>
+        <p style="color: #2d3092; background-color: #FFFFFF;"> Welcome to Scapay. We will be sending updates and news about Scapay to you. We hope you're as excited as we are for the journey ahead.</p>
        <img src="https://scapaystatic.fra1.digitaloceanspaces.com/welcome%20email.jpg">
-       <p style="color: #2d3092;">
+       <p style="color: #2d3092; background-color: #FFFFFF;">
        <h3>What is Scapay?</h3>
        Scapay is a crypto currency liquidity solution that allows businesses recieve payment in regular/fiat currency while allowing its customers spend their stable cryto coins.
-       <p style="color: #2d3092;">follow our social media pages for more news on Scapay.</p>
+       <p style="color: #2d3092; background-color: #FFFFFF;">follow our social media pages for more news on Scapay.</p>
        </p>
-       <p>
+       <p style="background-color: #FFFFFF;">
        <img style="height: 28px;width: 28px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/instagram.png" href="" alt="instagram">
        <img style="height: 28px;width: 28px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/twitter.png" href="" alt="twitter">
        <img style="height: 28px;width: 28px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/facebook.png" href="" alt="facebook">
