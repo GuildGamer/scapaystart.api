@@ -7,6 +7,7 @@ from .serializers import SubscriptionModelSerializer
 from django.db import transaction
 from . import send_email as sm
 from validate_email_address import validate_email
+from . import check_email as ce
 
 
 class SubscriptionViewSet(viewsets.ModelViewSet):
@@ -30,6 +31,8 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
     )
     def subscribe(self, request) -> Response:
         serializer = SubscriptionModelSerializer(data=request.data)
+        email = serializer.data.get("email")
+        name = serializer.data.get("name")
 
         if not serializer.is_valid():
             print(f"ERROR {serializer.errors}")
@@ -53,9 +56,7 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_200_OK,
             )
         with transaction.atomic():
-            email = serializer.data.get("email")
-            name = serializer.data.get("name")
-            is_valid = validate_email(email, verify=True)
+            is_valid = ce.check(email)
             if is_valid == True:
                 print(f"VALID EMAIL {email}, {is_valid}")
                 try:
