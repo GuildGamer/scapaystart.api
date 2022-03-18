@@ -47,7 +47,7 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
             name = serializer.data.get("name")
             is_valid = validate_email(email, verify=True)
             if is_valid == True:
-                print(f"VALID EMAIL {email}")
+                print(f"VALID EMAIL {email}, {is_valid}")
                 try:
                     sm.send_email(name=name, recepient=email)
                 except Exception as e:
@@ -61,7 +61,7 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
                         status=status.HTTP_200_OK,
                     )
             else:
-                print(f"INVALID EMAIL {email}")
+                print(f"INVALID EMAIL {email}, {is_valid}")
                 return Response(
                     {
                         "success": False,
