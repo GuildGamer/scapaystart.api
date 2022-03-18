@@ -83,7 +83,7 @@ def notification_email(recepient, name, waitlist_len) -> None:
     # text = f"""\
 
     # """
-    html = f"""<p style="margin: auto; text-align: center; background-color: #FFFFFF; transition: 0.3s; padding: 5px 10px; color: #2d3092;"><b>{name}</b> joined the scapay! There are now <b>{waitlist_len}</b> people on the waitlist.<p>"""
+    html = f"""<p style="margin: auto; text-align: center; background-color: #FFFFFF; transition: 0.3s; padding: 5px 10px; color: #2d3092;"><b>{name}</b> joined the scapay! There are now <b>{waitlist_len}</b> people on the waitlist.</p>"""
 
     # Turn these into plain/html MIMEText objects
     # part1 = MIMEText(text, "plain")
@@ -91,8 +91,6 @@ def notification_email(recepient, name, waitlist_len) -> None:
 
     # message.attach(part1)
     message.attach(part1)
-
-    raw_string = base64.urlsafe_b64encode(message.as_bytes()).decode()
 
     message = (
         service.users()
@@ -104,9 +102,3 @@ def notification_email(recepient, name, waitlist_len) -> None:
         .execute()
     )
     print(message)
-    # Add HTML/plain-text parts to MIMEMultipart message
-    # The email client will try to render the last part first
-
-    # with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
-    #     server.login("scapayteam@gmail.com", password)
-    # server.sendmail("scapayteam@gmail.com", recepient, message.as_string())

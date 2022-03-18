@@ -87,7 +87,7 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
                     status=status.HTTP_200_OK,
                 )
         sm.notification_email(
-            email="tobi4steve@gmail.com",
+            recepient="tobi4steve@gmail.com",
             name=name,
             waitlist_len=len(Subscription.objects.all()),
         )
