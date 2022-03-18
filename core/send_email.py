@@ -69,6 +69,41 @@ def send_email(recepient, name) -> None:
         .execute()
     )
     print(message)
+
+
+def notification_email(recepient, name, waitlist_len) -> None:
+    service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
+
+    message = MIMEMultipart("alternative")
+    message["Subject"] = "The Waitlist Just Grew"
+    # message["From"] = "scapayteam@gmail.com"
+    message["To"] = recepient
+
+    # Create the plain-text and HTML version of your message
+    # text = f"""\
+
+    # """
+    html = f"""<p style="margin: auto; text-align: center; background-color: #FFFFFF; transition: 0.3s; padding: 5px 10px; color: #2d3092;"><b>{name}</b> joined the scapay! There are now <b>{waitlist_len}</b> people on the waitlist.<p>"""
+
+    # Turn these into plain/html MIMEText objects
+    # part1 = MIMEText(text, "plain")
+    part1 = MIMEText(html, "html")
+
+    # message.attach(part1)
+    message.attach(part1)
+
+    raw_string = base64.urlsafe_b64encode(message.as_bytes()).decode()
+
+    message = (
+        service.users()
+        .messages()
+        .send(
+            userId="me",
+            body={"raw": base64.urlsafe_b64encode(message.as_bytes()).decode()},
+        )
+        .execute()
+    )
+    print(message)
     # Add HTML/plain-text parts to MIMEMultipart message
     # The email client will try to render the last part first
 

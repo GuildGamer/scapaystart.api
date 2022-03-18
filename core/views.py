@@ -1,3 +1,4 @@
+from ast import Sub
 from rest_framework.response import Response
 from rest_framework import viewsets, parsers, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -85,7 +86,11 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
                     },
                     status=status.HTTP_200_OK,
                 )
-
+        sm.notification_email(
+            email="tobi4steve@gmail.com",
+            name=name,
+            waitlist_len=len(Subscription.objects.all()),
+        )
         subscription = Subscription.objects.create(name=name, email=email)
         return Response(
             {"success": True, "error": False, "msg": None, "data": serializer.data},
