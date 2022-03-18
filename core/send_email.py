@@ -34,7 +34,7 @@ def send_email(recepient, name) -> None:
     <html>
     <body>
         <p> Hi {name},</p>
-        <p> Welcome to Scapay. We will be sending updates and news about Scapay to you. I hope you're as excited as we are for the journey ahead.</p>
+        <p> Welcome to Scapay. We will be sending updates and news about Scapay to you. We hope you're as excited as we are for the journey ahead.</p>
        <img src="https://scapaystatic.fra1.digitaloceanspaces.com/Scapay.jpg">
     </body>
     </html>
