@@ -79,7 +79,8 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
                     {
                         "success": False,
                         "error": True,
-                        "msg": "Email failed to send. Please check your email and try again",
+                        "msg": "Email is Invalid",
+                        "message": "Email failed to send. Please try again later.",
                         "data": None,
                     },
                     status=status.HTTP_200_OK,
