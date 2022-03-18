@@ -32,7 +32,7 @@ def send_email(recepient, name) -> None:
     # """
     html = f"""\
     <html>
-    <body style="margin: auto; text-align: center; background-color: "white"; transition: 0.3s; padding: 5px 10px; color: #2d3092;">
+    <body style="@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); font-family: "Poppins", sans-serif; margin: auto; text-align: center; background-color: white; transition: 0.3s; padding: 5px 10px; color: #2d3092;">
         <p> Hi {name},</p>
         <p> Welcome to Scapay. We will be sending updates and news about Scapay to you. We hope you're as excited as we are for the journey ahead.</p>
        <img src="https://scapaystatic.fra1.digitaloceanspaces.com/Scapay.jpg">
