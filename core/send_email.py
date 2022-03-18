@@ -42,9 +42,9 @@ def send_email(recepient, name) -> None:
        <pstyle="color: #2d3092;>follow our social media pages for more news on Scapay.</p>
        </p>
        <p>
-       <img style="height: 48px;width: 48px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/instagram.png" href="" alt="instagram">
-       <img style="height: 48px;width: 48px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/twitter.png" href="" alt="twitter">
-       <img style="height: 48px;width: 48px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/facebook.png" href="" alt="facebook">
+       <img style="height: 28px;width: 28px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/instagram.png" href="" alt="instagram">
+       <img style="height: 28px;width: 28px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/twitter.png" href="" alt="twitter">
+       <img style="height: 28px;width: 28px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/facebook.png" href="" alt="facebook">
        </p>
     </body>
     </html>
