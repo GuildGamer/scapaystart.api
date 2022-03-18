@@ -38,13 +38,13 @@ def send_email(recepient, name) -> None:
        <img src="https://scapaystatic.fra1.digitaloceanspaces.com/welcome%20email.jpg">
        <p style="color: #2d3092;">
        <h3>What is Scapay?</h3>
-       Scapay is a crypto currency liquidity solution that allows businesses recieve payment in regular/fiat currency while allowing its customers spend their stable cryto coins.
+       Scapay is a crypto currency liquidity solution that allows businesses receive payment in regular/fiat currency while allowing its customers spend their stable cryto coins.
        <p style="color: #2d3092;">follow our social media pages for more news on Scapay.</p>
        </p>
        <p>
-       <img style="height: 28px;width: 28px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/instagram.png" href="" alt="instagram">
-       <img style="height: 28px;width: 28px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/twitter.png" href="" alt="twitter">
-       <img style="height: 28px;width: 28px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/facebook.png" href="" alt="facebook">
+       <img style="height: 28px;width: 24px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/instagram.png" href="" alt="instagram">
+       <img style="height: 28px;width: 24px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/twitter.png" href="" alt="twitter">
+       <img style="height: 28px;width: 24px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/facebook.png" href="" alt="facebook">
        </p>
     </body>
     </html>
