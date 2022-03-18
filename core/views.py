@@ -31,8 +31,6 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
     )
     def subscribe(self, request) -> Response:
         serializer = SubscriptionModelSerializer(data=request.data)
-        email = serializer.data.get("email")
-        name = serializer.data.get("name")
 
         if not serializer.is_valid():
             print(f"ERROR {serializer.errors}")
@@ -45,6 +43,8 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
                 },
                 status=status.HTTP_200_OK,
             )
+        email = serializer.data.get("email")
+        name = serializer.data.get("name")
         if Subscription.objects.filter(email=email).len() > 0:
             return Response(
                 {
