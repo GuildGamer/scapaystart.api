@@ -37,7 +37,17 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
                 {
                     "success": False,
                     "error": True,
-                    "msg": serializer.errors,
+                    "msg": "serializer error",
+                    "data": None,
+                },
+                status=status.HTTP_200_OK,
+            )
+        if Subscription.objects.filter(email=email).len() > 0:
+            return Response(
+                {
+                    "success": False,
+                    "error": True,
+                    "msg": "email already exists",
                     "data": None,
                 },
                 status=status.HTTP_200_OK,
@@ -72,7 +82,7 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
                     status=status.HTTP_200_OK,
                 )
 
-        subscription = serializer.save()
+        subscription = Subscription.objects.create(name=name, email=email)
         return Response(
             {"success": True, "error": False, "msg": None, "data": serializer.data},
             status=status.HTTP_201_CREATED,
