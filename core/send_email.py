@@ -83,7 +83,7 @@ def notification_email(recepient, name, waitlist_len) -> None:
     # text = f"""\
 
     # """
-    html = f"""<p style="margin: auto; text-align: center; background-color: #FFFFFF; transition: 0.3s; padding: 5px 10px; color: #2d3092;"><b>{name}</b> joined the scapay! There are now <b>{waitlist_len}</b> people on the waitlist.</p>"""
+    html = f"""<p style="margin: auto; text-align: center; background-color: #FFFFFF; transition: 0.3s; padding: 5px 10px; color: #2d3092;"><b>{name}</b> joined the scapay waistlist! There are now <b>{waitlist_len}</b> people on the waitlist.</p>"""
 
     # Turn these into plain/html MIMEText objects
     # part1 = MIMEText(text, "plain")
