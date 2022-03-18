@@ -6,7 +6,7 @@ from .models import Subscription
 from .serializers import SubscriptionModelSerializer
 from django.db import transaction
 from . import send_email as sm
-from validate_email import validate_email
+from validate_email_address import validate_email
 
 
 class SubscriptionViewSet(viewsets.ModelViewSet):
