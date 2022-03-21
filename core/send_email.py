@@ -43,8 +43,8 @@ def send_email(recepient, name) -> None:
        </p>
        <p>
        <a href="https://www.instagram.com/scapayofficial/"><img style="height: 24px;width: 24px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/instagram.gif" alt="instagram"></a>
-       <a href="https://twitter.com/scapayteam?t=A99rA5J6VEhuQonLpbxxXA&s=08"><img style="height: 24px;width: 24px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/twitter.png" alt="twitter"></a>
-       <a href="https://fb.me/scapayofficial"><img style="height: 24px;width: 24px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/facebook.png" alt="facebook"></a>
+       <a href="https://twitter.com/scapayteam?t=A99rA5J6VEhuQonLpbxxXA&s=08"><img style="height: 24px;width: 24px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/twitter.gif" alt="twitter"></a>
+       <a href="https://fb.me/scapayofficial"><img style="height: 24px;width: 24px;" src="https://scapaystatic.fra1.digitaloceanspaces.com/facebook.gif" alt="facebook"></a>
        </p>
     </body>
     </html>
